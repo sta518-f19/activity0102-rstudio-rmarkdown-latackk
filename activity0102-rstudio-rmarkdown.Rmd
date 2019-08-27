@@ -2,7 +2,12 @@
 title: "Activity 1.2 - RStudio and R Markdown"
 author: "Katie Latack"
 date: "8/26/2019"
-output: html_document
+output: 
+  html_document: 
+    fig_height: 8
+    fig_width: 12
+    highlight: tango
+    theme: flatly
 ---
 
 ### Load packages
@@ -84,3 +89,14 @@ The *r* value for the circle is about the same as the *r* value for the dino.
 ### Exercise 5
 
 (Add code and narrative as needed. To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.)
+```{r}
+ggplot(data= datasaurus_dozen, aes(x=x, y=y, color = dataset)) +
+  geom_point() +
+  facet_wrap(~ dataset, ncol=3) +
+  theme(legend.position= "none")
+
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r= cor(x,y)) %>%
+  print(13)
+```
