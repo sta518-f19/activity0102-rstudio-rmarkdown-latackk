@@ -6,8 +6,8 @@ output:
   html_document: 
     fig_height: 8
     fig_width: 12
-    highlight: tango
-    theme: flatly
+    highlight: monochrome
+    theme: united
 ---
 
 ### Load packages
@@ -88,7 +88,7 @@ The *r* value for the circle is about the same as the *r* value for the dino.
 
 ### Exercise 5
 
-(Add code and narrative as needed. To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.)
+
 ```{r}
 ggplot(data= datasaurus_dozen, aes(x=x, y=y, color = dataset)) +
   geom_point() +
